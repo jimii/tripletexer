@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://tripletex.no/v2/token/session/:create?consumerToken=<%= ENV['CONSUMER_SECRET'] %>&employeeToken=<%= ENV['EMPLOYEE_TOKEN'] %>&expirationDate=<%= (Time.now.to_date + 1).to_date.to_s %>
+    uri: https://tripletex.no/v2/token/session/:create?consumerToken=<%= ENV['CONSUMER_SECRET'] %>&employeeToken=<%= ENV['EMPLOYEE_TOKEN'] %>&expirationDate=<%= (Time.now.utc.to_date + 1).to_date.to_s %>
     body:
       encoding: UTF-8
       string: ''
@@ -48,7 +48,7 @@ http_interactions:
       Content-Length:
       - '429'
       Date:
-      - Wed, 27 Sep 2017 17:48:32 GMT
+      - Wed, 27 Sep 2018 17:48:32 GMT
       Server:
       - tripletex.no
     body:
@@ -67,7 +67,7 @@ http_interactions:
               "id" : 603,
               "url" : "tripletex.no/v2/token/employee/603"
             },
-            "expirationDate" : "<%= (Time.now.to_date + 1).to_date.to_s %>",
+            "expirationDate" : "<%= (Time.now.utc.to_date + 1).to_date.to_s %>",
             "token" : "<%= ENV['SESSION_TOKEN'] %>",
             "encryptionKey" : null
           }
