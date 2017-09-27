@@ -6,8 +6,8 @@ module Tripletexer::Endpoints
     # https://tripletex.no/v2-docs/#!/order/search
     def search(date_from, date_to, params = {})
       final_params = params.merge(
-        'orderDateFrom' => format_date(date_from),
-        'orderDateTo' => format_date(date_to)
+        'orderDateFrom' => ::Tripletexer::FormatHelpers.format_date(date_from),
+        'orderDateTo' => ::Tripletexer::FormatHelpers.format_date(date_to)
       )
       find_entities('/v2/order', final_params)
     end
@@ -30,7 +30,7 @@ module Tripletexer::Endpoints
     # https://tripletex.no/v2-docs/#!/order/invoice
     def create_invoice(id, invoice_date, send_to_customer = true)
       final_params = params.merge(
-        'invoiceDate' => format_date(invoice_date),
+        'invoiceDate' => ::Tripletexer::FormatHelpers.format_date(invoice_date),
         'sendToCustomer' => send_to_customer.to_s
       )
       put("/v2/order/#{id}", final_params)

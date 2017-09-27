@@ -6,8 +6,8 @@ module Tripletexer::Endpoints
     # https://tripletex.no/v2-docs/#!/timesheet47entry/search
     def search(from_date, to_date, params = {})
       final_params = params.merge(
-        'dateFrom' => format_date(from_date),
-        'dateTo' => format_date(to_date)
+        'dateFrom' => ::Tripletexer::FormatHelpers.format_date(from_date),
+        'dateTo' => ::Tripletexer::FormatHelpers.format_date(to_date)
       )
       find_entities('/v2/timesheet/entry', final_params)
     end

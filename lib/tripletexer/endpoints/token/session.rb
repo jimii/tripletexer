@@ -10,11 +10,11 @@ module Tripletexer::Endpoints
         req.params = {
           'consumerToken' => consumer_token,
           'employeeToken' => employee_token,
-          'expirationDate' => format_date(expiration_date)
+          'expirationDate' => ::Tripletexer::FormatHelpers.format_date(expiration_date)
         }
       end
       connection.session_token = response.dig('value', 'token')
-      response
+      response['value']
     end
 
     # https://tripletex.no/v2-docs/#!/token47session/whoAmI

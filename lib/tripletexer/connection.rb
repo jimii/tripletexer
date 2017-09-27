@@ -20,9 +20,7 @@ class Tripletexer::Connection
   end
 
   def reset
-    @session_token = nil
-    @connection = nil
-    nil
+    @session_token = @connection = nil
   end
 
   def session_token=(new_session_token)

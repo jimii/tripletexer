@@ -7,8 +7,8 @@ module Tripletexer::Endpoints
     # https://tripletex.no/v2-docs/#!/ledger/search
     def search(date_from, date_to, params = {})
       final_params = params.merge(
-        'dateFrom' => format_date(date_from),
-        'dateTo' => format_date(date_to)
+        'dateFrom' => ::Tripletexer::FormatHelpers.format_date(date_from),
+        'dateTo' => ::Tripletexer::FormatHelpers.format_date(date_to)
       )
       final_params['fields'] = DEFAULT_FIELDS unless final_params.key?('fields')
       find_entities('/v2/ledger', final_params)

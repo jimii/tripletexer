@@ -6,8 +6,8 @@ module Tripletexer::Endpoints
     # https://tripletex.no/v2-docs/#!/invoice/search
     def search(date_from, date_to, params = {})
       final_params = params.merge(
-        'invoiceDateFrom' => format_date(date_from),
-        'invoiceDateTo' => format_date(date_to)
+        'invoiceDateFrom' => ::Tripletexer::FormatHelpers.format_date(date_from),
+        'invoiceDateTo' => ::Tripletexer::FormatHelpers.format_date(date_to)
       )
       find_entities('/v2/invoice', final_params)
     end

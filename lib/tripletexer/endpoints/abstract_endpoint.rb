@@ -5,7 +5,6 @@ require 'uri'
 
 module Tripletexer::Endpoints
   class AbstractEndpoint
-    include ::Tripletexer::FormatHelpers
 
     def initialize(connection)
       @connection = connection
@@ -36,25 +35,25 @@ module Tripletexer::Endpoints
 
     def create_entity(path, body, params = {})
       post(path, params) do |req|
-        req.body = normalize_body(body)
+        req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
       end['value']
     end
 
     def update_entity(path, body, params = {})
       put(path, params) do |req|
-        req.body = normalize_body(body)
+        req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
       end['value']
     end
 
     def create_entities(path, body, params = {})
       post(path, params) do |req|
-        req.body = normalize_body(body)
+        req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
       end['values']
     end
 
     def update_entities(path, body, params = {})
       put(path, params) do |req|
-        req.body = normalize_body(body)
+        req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
       end['values']
     end
 
