@@ -13,7 +13,7 @@ module Tripletexer::Endpoints
           'expirationDate' => format_date(expiration_date)
         }
       end
-      connection.token = response.dig('value', 'token')
+      connection.session_token = response.dig('value', 'token')
       response
     end
 
@@ -23,8 +23,8 @@ module Tripletexer::Endpoints
     end
 
     # https://tripletex.no/v2-docs/#!/token47session/delete
-    def destroy(token = connection.token)
-      response = delete("/v2/token/session/#{token}")
+    def destroy(session_token = connection.session_token)
+      response = delete("/v2/token/session/#{session_token}")
       connection.reset
       response
     end

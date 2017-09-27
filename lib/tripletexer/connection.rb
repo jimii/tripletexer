@@ -7,7 +7,7 @@ require 'faraday_middleware'
 class Tripletexer::Connection
   ENDPOINT = 'https://tripletex.no/'
 
-  attr_reader :token
+  attr_reader :session_token
 
   def initialize(object_class: Hash, proxy: nil)
     @object_class = object_class
@@ -15,19 +15,19 @@ class Tripletexer::Connection
   end
 
   def connection
-    return @connection if token && @connection
+    return @connection if session_token && @connection
     @connection = init_connection
   end
 
   def reset
-    @token = nil
+    @session_token = nil
     @connection = nil
     nil
   end
 
-  def token=(new_token)
+  def session_token=(new_session_token)
     reset
-    @token = new_token
+    @session_token = new_session_token
   end
 
   private
@@ -42,7 +42,7 @@ class Tripletexer::Connection
         'Content-Type': 'application/json'
       }
       faraday.adapter :net_http
-      faraday.basic_auth(0, token) if token
+      faraday.basic_auth(0, session_token) if session_token
       faraday.proxy = proxy if proxy # https://github.com/lostisland/faraday/issues/733
     end
   end

@@ -47,10 +47,10 @@
 end
 
 class Tripletexer
-  def initialize(object_class: Hash, proxy: nil, token: nil)
+  def initialize(object_class: Hash, proxy: nil, session_token: nil)
     @object_class = object_class
     @proxy = proxy
-    connection.token = token if token
+    connection.session_token = session_token if session_token
   end
 
   def activity
