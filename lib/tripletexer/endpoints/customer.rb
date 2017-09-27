@@ -24,7 +24,7 @@ module Tripletexer::Endpoints
     end
 
     def category
-      Tripletexer::Endpoints::Customer::Category.new(connection)
+      Tripletexer::Endpoints::Customer::Category.new(api_client)
     end
 
   end

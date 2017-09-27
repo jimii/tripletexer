@@ -15,35 +15,35 @@ module Tripletexer::Endpoints
     end
 
     def account
-      Tripletexer::Endpoints::Ledger::Account.new(connection)
+      Tripletexer::Endpoints::Ledger::Account.new(api_client)
     end
 
     def accounting_period
-      Tripletexer::Endpoints::Ledger::AccountingPeriod.new(connection)
+      Tripletexer::Endpoints::Ledger::AccountingPeriod.new(api_client)
     end
 
     def annual_account
-      Tripletexer::Endpoints::Ledger::AnnualAccount.new(connection)
+      Tripletexer::Endpoints::Ledger::AnnualAccount.new(api_client)
     end
 
     def close_group
-      Tripletexer::Endpoints::Ledger::CloseGroup.new(connection)
+      Tripletexer::Endpoints::Ledger::CloseGroup.new(api_client)
     end
 
     def posting
-      Tripletexer::Endpoints::Ledger::Posting.new(connection)
+      Tripletexer::Endpoints::Ledger::Posting.new(api_client)
     end
 
     def vat_type
-      Tripletexer::Endpoints::Ledger::VatType.new(connection)
+      Tripletexer::Endpoints::Ledger::VatType.new(api_client)
     end
 
     def voucher
-      Tripletexer::Endpoints::Ledger::Voucher.new(connection)
+      Tripletexer::Endpoints::Ledger::Voucher.new(api_client)
     end
 
     def type
-      Tripletexer::Endpoints::Ledger::Type.new(connection)
+      Tripletexer::Endpoints::Ledger::Type.new(api_client)
     end
   end
 end

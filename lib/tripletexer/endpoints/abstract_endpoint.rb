@@ -6,13 +6,13 @@ require 'uri'
 module Tripletexer::Endpoints
   class AbstractEndpoint
 
-    def initialize(connection)
-      @connection = connection
+    def initialize(api_client)
+      @api_client = api_client
     end
 
     private
 
-    attr_reader :connection
+    attr_reader :api_client
 
     def find_entities(path, params, &block)
       Enumerator.new do |enum_yielder|
@@ -75,7 +75,7 @@ module Tripletexer::Endpoints
 
     def call(method, path, *args, &block)
       normalized_path = URI.escape(path)
-      response = connection.connection.public_send(method, normalized_path, *args, &block)
+      response = api_client.connection.public_send(method, normalized_path, *args, &block)
       handle_response(response)
     end
 

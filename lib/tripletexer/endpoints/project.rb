@@ -19,7 +19,7 @@ module Tripletexer::Endpoints
     end
 
     def category
-      Tripletexer::Endpoints::Project::Category.new(connection)
+      Tripletexer::Endpoints::Project::Category.new(api_client)
     end
 
   end

@@ -37,7 +37,7 @@ module Tripletexer::Endpoints
     end
 
     def orderline
-      ::Tripletexer::Endpoints::Order::Orderline.new(connection)
+      ::Tripletexer::Endpoints::Order::Orderline.new(api_client)
     end
   end
 end

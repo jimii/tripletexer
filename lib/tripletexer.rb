@@ -3,7 +3,7 @@
 %w[
   tripletexer/version.rb
   tripletexer/errors.rb
-  tripletexer/connection.rb
+  tripletexer/api_client.rb
   tripletexer/format_helpers.rb
   tripletexer/endpoints.rb
   tripletexer/endpoints/abstract_endpoint.rb
@@ -47,90 +47,85 @@
 end
 
 class Tripletexer
-  def initialize(object_class: Hash, proxy: nil, session_token: nil)
-    @object_class = object_class
-    @proxy = proxy
-    connection.session_token = session_token if session_token
+  def initialize(api_client: Tripletexer::APIClient.new, session_token: nil)
+    @api_client = api_client
+    @api_client.session_token = session_token if session_token
   end
 
   def activity
-    Tripletexer::Endpoints::Activity.new(connection)
+    Tripletexer::Endpoints::Activity.new(api_client)
   end
 
   def address
-    Tripletexer::Endpoints::Address.new(connection)
+    Tripletexer::Endpoints::Address.new(api_client)
   end
 
   def company
-    Tripletexer::Endpoints::Company.new(connection)
+    Tripletexer::Endpoints::Company.new(api_client)
   end
 
   def contact
-    Tripletexer::Endpoints::Contact.new(connection)
+    Tripletexer::Endpoints::Contact.new(api_client)
   end
 
   def country
-    Tripletexer::Endpoints::Country.new(connection)
+    Tripletexer::Endpoints::Country.new(api_client)
   end
 
   def currency
-    Tripletexer::Endpoints::Currency.new(connection)
+    Tripletexer::Endpoints::Currency.new(api_client)
   end
 
   def customer
-    Tripletexer::Endpoints::Customer.new(connection)
+    Tripletexer::Endpoints::Customer.new(api_client)
   end
 
   def department
-    Tripletexer::Endpoints::Department.new(connection)
+    Tripletexer::Endpoints::Department.new(api_client)
   end
 
   def employee
-    Tripletexer::Endpoints::Employee.new(connection)
+    Tripletexer::Endpoints::Employee.new(api_client)
   end
 
   def inventory
-    Tripletexer::Endpoints::Inventory.new(connection)
+    Tripletexer::Endpoints::Inventory.new(api_client)
   end
 
   def invoice
-    Tripletexer::Endpoints::Invoice.new(connection)
+    Tripletexer::Endpoints::Invoice.new(api_client)
   end
 
   def ledger
-    Tripletexer::Endpoints::Ledger.new(connection)
+    Tripletexer::Endpoints::Ledger.new(api_client)
   end
 
   def order
-    Tripletexer::Endpoints::Order.new(connection)
+    Tripletexer::Endpoints::Order.new(api_client)
   end
 
   def product
-    Tripletexer::Endpoints::Product.new(connection)
+    Tripletexer::Endpoints::Product.new(api_client)
   end
 
   def project
-    Tripletexer::Endpoints::Project.new(connection)
+    Tripletexer::Endpoints::Project.new(api_client)
   end
 
   def supplier
-    Tripletexer::Endpoints::Supplier.new(connection)
+    Tripletexer::Endpoints::Supplier.new(api_client)
   end
 
   def timesheet
-    Tripletexer::Endpoints::Timesheet.new(connection)
+    Tripletexer::Endpoints::Timesheet.new(api_client)
   end
 
   def token
-    Tripletexer::Endpoints::Token.new(connection)
+    Tripletexer::Endpoints::Token.new(api_client)
   end
 
   private
 
-  attr_accessor :object_class, :proxy
-
-  def connection
-    @connection ||= Tripletexer::Connection.new(object_class: object_class, proxy: proxy)
-  end
+  attr_accessor :api_client
 
 end

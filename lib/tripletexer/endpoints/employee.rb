@@ -13,7 +13,7 @@ module Tripletexer::Endpoints
     end
 
     def entitlement
-      Tripletexer::Endpoints::Employee::Entitlement.new(connection)
+      Tripletexer::Endpoints::Employee::Entitlement.new(api_client)
     end
 
   end

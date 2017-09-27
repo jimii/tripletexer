@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Tripletexer::Connection do
+RSpec.describe Tripletexer::APIClient do
   describe '#connection' do
     it 'returns new Faraday connection' do
       expect( subject.connection ).to be_an_instance_of Faraday::Connection
@@ -23,18 +23,18 @@ RSpec.describe Tripletexer::Connection do
     end
   end
 
-  describe '#reset' do
+  describe '#reset_connection' do
     before do
       subject.session_token = 'token'
       subject.connection
     end
 
     it 'destroys session_token' do
-      expect { subject.reset }.to change { subject.session_token }.to(nil)
+      expect { subject.reset_connection }.to change { subject.session_token }.to(nil)
     end
 
     it 'destroys cached connection' do
-      expect { subject.reset }.to change { subject.connection.object_id }
+      expect { subject.reset_connection }.to change { subject.connection.object_id }
     end
   end
 

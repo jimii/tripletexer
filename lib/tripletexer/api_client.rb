@@ -4,14 +4,15 @@ require 'json'
 require 'faraday'
 require 'faraday_middleware'
 
-class Tripletexer::Connection
+class Tripletexer::APIClient
   ENDPOINT = 'https://tripletex.no/'
 
-  attr_reader :session_token
+  attr_reader :session_token, :debug
 
-  def initialize(object_class: Hash, proxy: nil)
+  def initialize(object_class: Hash, proxy: nil, debug: false)
     @object_class = object_class
     @proxy = proxy
+    @debug = debug
   end
 
   def connection
@@ -19,12 +20,12 @@ class Tripletexer::Connection
     @connection = init_connection
   end
 
-  def reset
+  def reset_connection
     @session_token = @connection = nil
   end
 
   def session_token=(new_session_token)
-    reset
+    reset_connection
     @session_token = new_session_token
   end
 
@@ -34,7 +35,7 @@ class Tripletexer::Connection
 
   def init_connection
     Faraday.new(url: ENDPOINT) do |faraday|
-      faraday.response :logger
+      faraday.response :logger if debug
       faraday.response :json, parser_options: { object_class: object_class }, content_type: %r[/json$]
       faraday.headers = {
         'Content-Type': 'application/json'

@@ -8,7 +8,7 @@ RSpec.describe Tripletexer::Endpoints::Token::Session do
     subject { Tripletexer.new.token.session }
     it 'creates new session and sets session_token for connection', vcr: 'endpoints/token/session/create' do
       response = subject.create(ENV['CONSUMER_SECRET'], ENV['EMPLOYEE_TOKEN'])
-      expect( subject.send(:connection).session_token ).to eq response['token']
+      expect( subject.send(:api_client).session_token ).to eq response['token']
     end
   end
 

@@ -38,7 +38,7 @@ module Tripletexer::Endpoints
     end
 
     def payment_type
-      Tripletexer::Endpoints::Invoice::PaymentType.new(connection)
+      Tripletexer::Endpoints::Invoice::PaymentType.new(api_client)
     end
   end
 end
