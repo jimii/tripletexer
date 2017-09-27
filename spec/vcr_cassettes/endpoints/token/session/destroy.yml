@@ -1,0 +1,295 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tripletex.no/v2/token/session/%3EwhoAmI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '216'
+      Date:
+      - Wed, 27 Sep 2017 18:21:56 GMT
+      Server:
+      - tripletex.no
+    body:
+      encoding: UTF-8
+      string: '{"status":401,"code":3000,"message":"Unauthorized","link":null,"developerMessage":"Could
+        not log in. The Authorization header is missing.","validationMessages":null,"requestId":"d1d34bba-467b-4ba1-b223-a46ac4cd46b4"}'
+    http_version: 
+  recorded_at: Wed, 27 Sep 2017 18:21:57 GMT
+- request:
+    method: put
+    uri: https://tripletex.no/v2/token/session/:create?consumerToken=<%= ENV['CONSUMER_SECRET'] %>&employeeToken=<%= ENV['EMPLOYEE_TOKEN'] %>&expirationDate=<%= (Time.now.to_date + 1).to_date.to_s %>
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.13.1
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      X-Rate-Limit-Limit:
+      - '100'
+      X-Rate-Limit-Remaining:
+      - '99'
+      X-Rate-Limit-Reset:
+      - '2'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '429'
+      Date:
+      - Wed, 27 Sep 2017 18:21:56 GMT
+      Server:
+      - tripletex.no
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "value" : {
+            "id" : 12993,
+            "version" : 0,
+            "url" : "tripletex.no/v2/token/session/12993",
+            "consumerToken" : {
+              "id" : 3135,
+              "url" : "tripletex.no/v2/token/consumer/3135"
+            },
+            "employeeToken" : {
+              "id" : 603,
+              "url" : "tripletex.no/v2/token/employee/603"
+            },
+            "expirationDate" : "2017-09-28",
+            "token" : "72a4e9a3-2dc4-4b36-aa69-329e8aaba7bf",
+            "encryptionKey" : null
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 27 Sep 2017 18:21:57 GMT
+- request:
+    method: get
+    uri: https://tripletex.no/v2/token/session/%3EwhoAmI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic MDo3MmE0ZTlhMy0yZGM0LTRiMzYtYWE2OS0zMjllOGFhYmE3YmY=
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=170C4C922C35B9E9B3679E714FF84CBE; Domain=tripletex.no; Path=/;
+        Secure; HttpOnly
+      X-Rate-Limit-Limit:
+      - '100'
+      X-Rate-Limit-Remaining:
+      - '99'
+      X-Rate-Limit-Reset:
+      - '2'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '75'
+      Date:
+      - Wed, 27 Sep 2017 18:21:56 GMT
+      Server:
+      - tripletex.no
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "value" : {
+            "employeeId" : 1133333,
+            "companyId" : 3795625
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 27 Sep 2017 18:21:57 GMT
+- request:
+    method: delete
+    uri: https://tripletex.no/v2/token/session/72a4e9a3-2dc4-4b36-aa69-329e8aaba7bf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic MDo3MmE0ZTlhMy0yZGM0LTRiMzYtYWE2OS0zMjllOGFhYmE3YmY=
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=65197B080FB626C1E96EB0A5B95103C5; Domain=tripletex.no; Path=/;
+        Secure; HttpOnly
+      X-Rate-Limit-Limit:
+      - '100'
+      X-Rate-Limit-Remaining:
+      - '98'
+      X-Rate-Limit-Reset:
+      - '2'
+      Date:
+      - Wed, 27 Sep 2017 18:21:57 GMT
+      Server:
+      - tripletex.no
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 27 Sep 2017 18:21:58 GMT
+- request:
+    method: get
+    uri: https://tripletex.no/v2/token/session/%3EwhoAmI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '216'
+      Date:
+      - Wed, 27 Sep 2017 18:21:57 GMT
+      Server:
+      - tripletex.no
+    body:
+      encoding: UTF-8
+      string: '{"status":401,"code":3000,"message":"Unauthorized","link":null,"developerMessage":"Could
+        not log in. The Authorization header is missing.","validationMessages":null,"requestId":"47df05fd-fef1-410b-a132-efb815fa9c9d"}'
+    http_version: 
+  recorded_at: Wed, 27 Sep 2017 18:21:58 GMT
+recorded_with: VCR 3.0.3

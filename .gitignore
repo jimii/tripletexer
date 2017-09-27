@@ -7,3 +7,5 @@ Gemfile.lock
 /.yardoc
 /tmp
 /*.gem
+/coverage
+.env
