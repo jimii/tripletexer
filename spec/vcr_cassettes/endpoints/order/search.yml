@@ -1,0 +1,164 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tripletex.no/v2/order?orderDateFrom=2017-01-01&orderDateTo=2018-09-26
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic MDpiNWM3ODNkMC01YjBhLTRiZjItODEyNi1mNGNmYWE4ZWE2ZWE=
+      User-Agent:
+      - Faraday v0.10.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=87A9BF3D53CB7B1894374290B27B7A1F; Domain=tripletex.no; Path=/;
+        Secure; HttpOnly
+      X-Rate-Limit-Limit:
+      - '100'
+      X-Rate-Limit-Remaining:
+      - '99'
+      X-Rate-Limit-Reset:
+      - '7'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2935'
+      Date:
+      - Wed, 27 Sep 2017 19:06:22 GMT
+      Server:
+      - tripletex.no
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "fullResultSize" : 2,
+          "from" : 0,
+          "count" : 2,
+          "versionDigest" : "txtemTgnGbSFk0NynqxAMA==",
+          "values" : [ {
+            "id" : 23432678,
+            "version" : 0,
+            "url" : "tripletex.no/v2/order/23432678",
+            "customer" : {
+              "id" : 6221272,
+              "url" : "tripletex.no/v2/customer/6221272"
+            },
+            "contact" : null,
+            "attn" : null,
+            "receiverEmail" : "",
+            "overdueNoticeEmail" : "",
+            "number" : "1",
+            "reference" : "",
+            "ourContactEmployee" : {
+              "id" : 1158417,
+              "url" : "tripletex.no/v2/employee/1158417"
+            },
+            "department" : null,
+            "orderDate" : "2017-09-13",
+            "project" : null,
+            "invoiceComment" : "",
+            "currency" : {
+              "id" : 1,
+              "url" : "tripletex.no/v2/currency/1"
+            },
+            "invoicesDueIn" : 14,
+            "invoicesDueInType" : "DAYS",
+            "isShowOpenPostsOnInvoices" : false,
+            "isClosed" : false,
+            "deliveryDate" : "2017-09-13",
+            "deliveryAddress" : null,
+            "deliveryComment" : "",
+            "isPrioritizeAmountsIncludingVat" : false,
+            "orderLineSorting" : "PRODUCT",
+            "orderLines" : [ {
+              "id" : 41516052,
+              "url" : "tripletex.no/v2/order/orderline/41516052"
+            }, {
+              "id" : 41516053,
+              "url" : "tripletex.no/v2/order/orderline/41516053"
+            } ],
+            "isSubscription" : false,
+            "subscriptionDuration" : 1,
+            "subscriptionDurationType" : "MONTHS",
+            "subscriptionPeriodsOnInvoice" : 1,
+            "subscriptionPeriodsOnInvoiceType" : "MONTHS",
+            "subscriptionInvoicingTimeInAdvanceOrArrears" : "ADVANCE",
+            "subscriptionInvoicingTime" : 0,
+            "subscriptionInvoicingTimeType" : "MONTHS",
+            "isSubscriptionAutoInvoicing" : false
+          }, {
+            "id" : 23767271,
+            "version" : 0,
+            "url" : "tripletex.no/v2/order/23767271",
+            "customer" : {
+              "id" : 6299534,
+              "url" : "tripletex.no/v2/customer/6299534"
+            },
+            "contact" : null,
+            "attn" : null,
+            "receiverEmail" : "",
+            "overdueNoticeEmail" : "",
+            "number" : "2",
+            "reference" : "",
+            "department" : {
+              "id" : 56029,
+              "url" : "tripletex.no/v2/department/56029"
+            },
+            "orderDate" : "2017-08-18",
+            "project" : null,
+            "invoiceComment" : "",
+            "currency" : {
+              "id" : 1,
+              "url" : "tripletex.no/v2/currency/1"
+            },
+            "invoicesDueIn" : 10,
+            "invoicesDueInType" : "DAYS",
+            "isShowOpenPostsOnInvoices" : false,
+            "isClosed" : false,
+            "deliveryDate" : "2017-09-25",
+            "deliveryAddress" : null,
+            "deliveryComment" : "",
+            "isPrioritizeAmountsIncludingVat" : false,
+            "orderLineSorting" : "ID",
+            "orderLines" : [ ],
+            "isSubscription" : false,
+            "subscriptionDuration" : 0,
+            "subscriptionDurationType" : "MONTHS",
+            "subscriptionPeriodsOnInvoice" : 0,
+            "subscriptionPeriodsOnInvoiceType" : "MONTHS",
+            "subscriptionInvoicingTimeInAdvanceOrArrears" : "ADVANCE",
+            "subscriptionInvoicingTime" : 0,
+            "subscriptionInvoicingTimeType" : "MONTHS",
+            "isSubscriptionAutoInvoicing" : false
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 27 Sep 2017 19:06:22 GMT
+recorded_with: VCR 3.0.3

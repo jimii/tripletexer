@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tripletex.no/v2/order/23432677
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic MDpiNWM3ODNkMC01YjBhLTRiZjItODEyNi1mNGNmYWE4ZWE2ZWE=
+      User-Agent:
+      - Faraday v0.10.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=4EDB6A5AC11F1EE742B1E259A511D681; Domain=tripletex.no; Path=/;
+        Secure; HttpOnly
+      X-Rate-Limit-Limit:
+      - '100'
+      X-Rate-Limit-Remaining:
+      - '99'
+      X-Rate-Limit-Reset:
+      - '3'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '224'
+      Date:
+      - Wed, 27 Sep 2017 19:13:56 GMT
+      Server:
+      - tripletex.no
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status" : 401,
+          "code" : 9000,
+          "message" : "Attempt to read unauthorized object.",
+          "link" : null,
+          "developerMessage" : null,
+          "validationMessages" : null,
+          "requestId" : "9a34b97c-f32d-451e-84a7-253ee809e8bf"
+        }
+    http_version: 
+  recorded_at: Wed, 27 Sep 2017 19:13:57 GMT
+recorded_with: VCR 3.0.3
