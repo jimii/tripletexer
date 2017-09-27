@@ -16,9 +16,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.2.2'
 
-  s.add_dependency 'faraday', '~> 0.13'
-  s.add_dependency 'faraday_middleware', '~> 0.12'
-  s.add_dependency 'json', '~> 2.1'
+  s.add_dependency 'faraday', '>= 0.10.0'
+  s.add_dependency 'faraday_middleware', '>= 0.10.1'
+  s.add_dependency 'json', '>= 1.8.5'
 
   s.add_development_dependency 'reek', '~> 4'
   s.add_development_dependency 'rubocop', '~> 0.50'
