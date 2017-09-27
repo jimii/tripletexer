@@ -13,7 +13,7 @@ module Tripletexer::Endpoints
       final_params = params.merge(
         'activityId' => activity_id
       )
-      put('/timesheet/timeClock/:start', final_params)
+      api_client.put('/timesheet/timeClock/:start', final_params)
     end
 
     # https://tripletex.no/v2-docs/#!/timesheet47timeClock/getPresent
@@ -33,7 +33,7 @@ module Tripletexer::Endpoints
 
     # https://tripletex.no/v2-docs/#!/timesheet47timeClock/stop
     def stop(id, params = {})
-      put("/timesheet/timeClock/#{id}/:stop", params)
+      api_client.put("/timesheet/timeClock/#{id}/:stop", params)
     end
   end
 end

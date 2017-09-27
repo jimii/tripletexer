@@ -33,7 +33,7 @@ module Tripletexer::Endpoints
         'invoiceDate' => ::Tripletexer::FormatHelpers.format_date(invoice_date),
         'sendToCustomer' => send_to_customer.to_s
       )
-      put("/v2/order/#{id}", final_params)
+      api_client.put("/v2/order/#{id}", final_params)
     end
 
     def orderline

@@ -34,7 +34,7 @@ module Tripletexer::Endpoints
         'paymentTypeId' => payment_type_id,
         'paidAmount' => paid_amount
       }
-      put("/v2/invoice/#{id}/:payment", final_params)
+      api_client.put("/v2/invoice/#{id}/:payment", final_params)
     end
 
     def payment_type
