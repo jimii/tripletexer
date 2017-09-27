@@ -33,6 +33,10 @@ RSpec.describe Tripletexer::Endpoints::Order do
     end
   end
 
+  describe '#update' do
+    it 'has no test yet'
+  end
+
   describe '#create_invoice' do
     it 'has no test yet'
   end
