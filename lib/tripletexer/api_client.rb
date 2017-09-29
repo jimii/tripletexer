@@ -56,7 +56,7 @@ class Tripletexer::APIClient
       faraday.response :logger if debug
       faraday.response :json, parser_options: { object_class: object_class }, content_type: %r[/json$]
       faraday.headers = {
-        'Content-Type': 'application/json'
+        'Content-Type' => 'application/json'
       }
       faraday.adapter :net_http
       faraday.basic_auth(0, session_token) if session_token
