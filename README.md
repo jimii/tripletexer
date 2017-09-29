@@ -4,6 +4,7 @@
 [![CircleCI](https://circleci.com/gh/graudeejs/tripletexer.svg?style=svg)](https://circleci.com/gh/graudeejs/tripletexer)
 [![Code Climate](https://codeclimate.com/github/graudeejs/tripletexer.svg)](https://codeclimate.com/github/graudeejs/tripletexer)
 [![Coverage Status](https://coveralls.io/repos/github/graudeejs/tripletexer/badge.svg?branch=master)](https://coveralls.io/github/graudeejs/tripletexer?branch=master)
+[![Gem Version](https://badge.fury.io/rb/tripletexer.svg)](https://badge.fury.io/rb/tripletexer)
 
 ## Getting started
 Add tripletexer to your Gemfile
