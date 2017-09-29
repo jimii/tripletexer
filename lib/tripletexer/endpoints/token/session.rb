@@ -13,7 +13,7 @@ module Tripletexer::Endpoints
           'expirationDate' => ::Tripletexer::FormatHelpers.format_date(expiration_date)
         }
       end
-      api_client.session_token = response.dig('value', 'token')
+      api_client.session_token = response['value']['token']
       response['value']
     end
 
