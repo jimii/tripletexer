@@ -8,8 +8,11 @@ rvm:
   - 2.2.2
   - 2.3.4
   - 2.4.1
-  - jruby
+  - jruby-head
 
+matrix:
+  allow_failures:
+    - rvm: jruby-head
 
 before_install:
   - 'cp "dot.env.example" ".env"'
