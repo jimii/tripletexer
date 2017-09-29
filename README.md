@@ -1,5 +1,7 @@
 # Tripletexer - ruby client for tripletex.no API v2
 
+https://github.com/graudeejs/tripletexer
+
 [![Build Status](https://travis-ci.org/graudeejs/tripletexer.svg?branch=master)](https://travis-ci.org/graudeejs/tripletexer)
 [![CircleCI](https://circleci.com/gh/graudeejs/tripletexer.svg?style=svg)](https://circleci.com/gh/graudeejs/tripletexer)
 [![Code Climate](https://codeclimate.com/github/graudeejs/tripletexer.svg)](https://codeclimate.com/github/graudeejs/tripletexer)
