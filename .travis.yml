@@ -1,0 +1,16 @@
+language: ruby
+sudo: false
+cache:
+  directories:
+    - bundler
+
+rvm:
+  - 2.2.2
+  - 2.3.4
+  - 2.4.1
+
+
+before_install:
+  - 'cp "dot.env.example" ".env"'
+
+script: bundle exec rspec spec
