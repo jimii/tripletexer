@@ -8,7 +8,7 @@
 ## Getting started
 Add tripletexer to your Gemfile
 ```ruby
-gem 'tripletexer', '~> 0.1.0'
+gem 'tripletexer', '~> 0.2.0'
 ```
 run bundle install
 
