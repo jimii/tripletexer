@@ -31,27 +31,27 @@ module Tripletexer::Endpoints
     end
 
     def create_entity(path, body, params = {})
-      api_client.post(path, params) do |req|
-        req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
-      end['value']
+      send_data(:post, path, body, params)['value']
     end
 
     def update_entity(path, body, params = {})
-      api_client.put(path, params) do |req|
-        req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
-      end['value']
+      send_data(:put, path, body, params)['value']
     end
 
     def create_entities(path, body, params = {})
-      api_client.post(path, params) do |req|
-        req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
-      end['values']
+      send_data(:post, path, body, params)['values']
     end
 
     def update_entities(path, body, params = {})
-      api_client.put(path, params) do |req|
+      send_data(:put, path, body, params)['values']
+    end
+
+    private
+
+    def send_data(method, path, body, params)
+      api_client.public_send(method, path, params) do |req|
         req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
-      end['values']
+      end
     end
 
   end
