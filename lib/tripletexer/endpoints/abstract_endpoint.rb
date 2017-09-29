@@ -14,7 +14,7 @@ module Tripletexer::Endpoints
     def find_entities(path, params, &block)
       Enumerator.new do |enum_yielder|
         request_params = params.dup
-        begin
+        loop do
           result = api_client.get(path, request_params, &block)
 
           result['values'].each do |value|
@@ -22,7 +22,8 @@ module Tripletexer::Endpoints
           end
 
           request_params['from'] = result['from'] + result['count']
-        end until result['fullResultSize'] <= request_params['from']
+          break if result['fullResultSize'] <= request_params['from']
+        end
       end
     end
 
