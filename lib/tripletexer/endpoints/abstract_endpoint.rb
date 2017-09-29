@@ -46,8 +46,6 @@ module Tripletexer::Endpoints
       send_data(:put, path, body, params)['values']
     end
 
-    private
-
     def send_data(method, path, body, params)
       api_client.public_send(method, path, params) do |req|
         req.body = ::Tripletexer::FormatHelpers.normalize_body(body)
