@@ -1,5 +1,7 @@
 # Tripletexer - ruby client for tripletex.no API v2
 
+[![CircleCI](https://circleci.com/gh/graudeejs/tripletexer.svg?style=svg)](https://circleci.com/gh/graudeejs/tripletexer)
+
 ## Getting started
 Add tripletexer to your Gemfile
 ```ruby
