@@ -19,7 +19,10 @@ run bundle install
 
 Tripletex.no API documentation can be found here: https://tripletex.no/v2-docs/
 
-This gem tries to fallow patterns of tripletex.no documentation, however not completely.
+This gem tries to fallow patterns of tripletex.no documentation, however not
+completely. Feel free to checkout
+[tripletexer on rubydoc](http://www.rubydoc.info/gems/tripletexer)
+
 
 ```ruby
 client = Tripletexer.new
