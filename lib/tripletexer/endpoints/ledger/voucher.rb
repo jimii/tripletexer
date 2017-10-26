@@ -6,8 +6,8 @@ module Tripletexer::Endpoints
     # https://tripletex.no/v2-docs/#!/ledger47voucher/search
     def search(date_from, date_to, params = {})
       final_params = params.merge(
-        'invoiceDateFrom' => ::Tripletexer::FormatHelpers.format_date(date_from),
-        'invoiceDateTo' => ::Tripletexer::FormatHelpers.format_date(date_to)
+        'dateFrom' => ::Tripletexer::FormatHelpers.format_date(date_from),
+        'dateTo' => ::Tripletexer::FormatHelpers.format_date(date_to)
       )
       find_entities('/v2/ledger/voucher', final_params)
     end
