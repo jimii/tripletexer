@@ -12,6 +12,8 @@
   tripletexer/endpoints/company.rb
   tripletexer/endpoints/contact.rb
   tripletexer/endpoints/country.rb
+  tripletexer/endpoints/crm.rb
+  tripletexer/endpoints/crm/prospect.rb
   tripletexer/endpoints/currency.rb
   tripletexer/endpoints/customer.rb
   tripletexer/endpoints/customer/category.rb
@@ -33,6 +35,7 @@
   tripletexer/endpoints/order.rb
   tripletexer/endpoints/order/orderline.rb
   tripletexer/endpoints/product.rb
+  tripletexer/endpoints/product/unit.rb
   tripletexer/endpoints/project.rb
   tripletexer/endpoints/project/category.rb
   tripletexer/endpoints/supplier.rb
@@ -122,6 +125,10 @@ class Tripletexer
 
   def token
     Tripletexer::Endpoints::Token.new(api_client)
+  end
+
+  def crm
+    Tripletexer::Endpoints::Crm.new(api_client)
   end
 
   private

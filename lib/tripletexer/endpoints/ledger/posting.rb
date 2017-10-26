@@ -17,5 +17,13 @@ module Tripletexer::Endpoints
       find_entity("/v2/ledger/posting/#{id}", params)
     end
 
+    # https://tripletex.no/v2-docs/#!/ledger47posting/openPost
+    def open_post(date, params = {})
+      final_params = params.merge(
+        'date' => ::Tripletexer::FormatHelpers.format_date(date),
+      )
+      find_entities('/v2/ledger/posting/openPost', final_params)
+    end
+
   end
 end
