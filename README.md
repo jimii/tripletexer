@@ -11,7 +11,7 @@ https://github.com/graudeejs/tripletexer
 ## Getting started
 Add tripletexer to your Gemfile
 ```ruby
-gem 'tripletexer', '~> 0.2.0'
+gem 'tripletexer', '~> 0.2.1'
 ```
 run bundle install
 
