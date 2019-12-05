@@ -7,8 +7,6 @@ require 'faraday_middleware'
 
 
 class Tripletexer::APIClient
-  ENDPOINT = 'https://tripletex.no/'
-
   attr_reader :session_token, :debug
 
   def initialize(object_class: Hash, proxy: nil, debug: false)
@@ -52,7 +50,7 @@ class Tripletexer::APIClient
   attr_reader :object_class, :proxy
 
   def init_connection
-    Faraday.new(url: ENDPOINT) do |faraday|
+    Faraday.new(url: Tripletexer.configuration.api_url) do |faraday|
       faraday.response :logger if debug
       faraday.response :json, parser_options: { object_class: object_class }, content_type: %r[/json$]
       faraday.headers = {

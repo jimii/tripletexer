@@ -2,6 +2,7 @@
 
 %w[
   tripletexer/version.rb
+  tripletexer/configuration.rb
   tripletexer/errors.rb
   tripletexer/api_client.rb
   tripletexer/format_helpers.rb
@@ -129,6 +130,22 @@ class Tripletexer
 
   def crm
     Tripletexer::Endpoints::Crm.new(api_client)
+  end
+
+  class << self
+    attr_writer :configuration
+  end
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.reset
+    @configuration = Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
   end
 
   private
