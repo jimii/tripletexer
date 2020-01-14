@@ -28,12 +28,9 @@ module Tripletexer::Endpoints
     end
 
     # https://tripletex.no/v2-docs/#!/order/invoice
-    def create_invoice(id, invoice_date, send_to_customer = true)
-      final_params = params.merge(
-        'invoiceDate' => ::Tripletexer::FormatHelpers.format_date(invoice_date),
-        'sendToCustomer' => send_to_customer.to_s
-      )
-      api_client.put("/v2/order/#{id}", final_params)
+    def create_invoice(id, invoice_date, send_to_customer = true, params = {})
+      invoice_date = ::Tripletexer::FormatHelpers.format_date(invoice_date)
+      api_client.put("/v2/order/#{id}/:invoice?invoiceDate=#{invoice_date}&sendToCustomer=#{send_to_customer.to_s}")
     end
 
     def orderline
