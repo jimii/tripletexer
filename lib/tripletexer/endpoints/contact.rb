@@ -18,5 +18,9 @@ module Tripletexer::Endpoints
       find_entity("/v2/contact/#{id}", params)
     end
 
+    # https://tripletex.no/v2-docs/#!/contact/put
+    def update(id, body)
+      update_entity("/v2/contact/#{id}", body)
+    end
   end
 end
