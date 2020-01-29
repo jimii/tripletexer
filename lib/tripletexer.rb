@@ -148,7 +148,7 @@ class Tripletexer
     yield(configuration)
   end
 
-  #private
+  private
 
   attr_accessor :api_client
 
