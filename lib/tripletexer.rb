@@ -18,6 +18,7 @@
   tripletexer/endpoints/currency.rb
   tripletexer/endpoints/customer.rb
   tripletexer/endpoints/customer/category.rb
+  tripletexer/endpoints/delivery_address.rb
   tripletexer/endpoints/department.rb
   tripletexer/endpoints/employee.rb
   tripletexer/endpoints/employee/entitlement.rb
@@ -86,6 +87,10 @@ class Tripletexer
 
   def department
     Tripletexer::Endpoints::Department.new(api_client)
+  end
+
+  def delivery_address
+    Tripletexer::Endpoints::DeliveryAddress.new(api_client)
   end
 
   def employee
